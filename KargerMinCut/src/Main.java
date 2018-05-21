@@ -8,7 +8,7 @@ public class Main {
 		Graph graph;
 		
 		int min = Integer.MAX_VALUE;	
-		for(int i=1; i<=200; i++) {
+		for(int i=1; i<=200000000; i++) {
 			sc = new Scanner(new FileInputStream("files/KargerMinCut.txt"));
 			graph = new Graph();
 			graph.populateGraph(sc);
