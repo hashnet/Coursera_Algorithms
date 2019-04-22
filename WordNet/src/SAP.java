@@ -15,7 +15,7 @@ public class SAP {
 		if (G == null)
 			throw new IllegalArgumentException();
 
-		this.G = G;
+		this.G = new Digraph(G);
 	}
 
 	// length of shortest ancestral path between v and w; -1 if no such path
@@ -62,12 +62,12 @@ public class SAP {
 	private Pair<Integer> lengthAncestor(Iterable<Integer> v, Iterable<Integer> w) {
 		int maxVertex = G.V();
 
-		for (int i : v) {
-			if (i < 0 || i >= maxVertex)
+		for (Integer i : v) {
+			if (i == null || i < 0 || i >= maxVertex)
 				throw new IllegalArgumentException();
 		}
-		for (int j : w) {
-			if (j < 0 || j >= maxVertex)
+		for (Integer j : w) {
+			if (j == null || j < 0 || j >= maxVertex)
 				throw new IllegalArgumentException();
 		}
 
